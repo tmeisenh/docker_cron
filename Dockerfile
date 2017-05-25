@@ -5,7 +5,7 @@ RUN apt-get update && apt-get install -y cron vim zsh
 ## Add crontab
 ADD src/crontab /etc/cron.d/env-crontab
 RUN chmod 0644 /etc/cron.d/env-crontab 
-RUN touch /var/log/env.cron.log
+RUN touch /var/log/goodenv.cron.log && touch /var/log/badenv.cron.log
 
 ## Add start and env scripts
 ADD src/setup_env.sh /root/setup_env.sh
